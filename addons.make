@@ -1,0 +1,4 @@
+ofxMSAInteractiveObject
+ofxParticleEmitter
+ofxSimpleGuiToo
+ofxXmlSettings

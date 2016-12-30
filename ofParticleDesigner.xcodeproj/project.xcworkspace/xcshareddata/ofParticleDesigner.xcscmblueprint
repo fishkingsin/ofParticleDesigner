@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7006982D5E173F825F214D67E217C9FFDD1211DE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "72D25900503C1EDEC22C56B3CBC898443AB798C3" : 9223372036854775807,
+    "7006982D5E173F825F214D67E217C9FFDD1211DE" : 9223372036854775807,
+    "ADACB6BAEA67271B9A2BF47167EA909FD6B0CF40" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8C5D3F34-4AE1-4189-B6CD-4CA5D322B2ED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "72D25900503C1EDEC22C56B3CBC898443AB798C3" : "..\/..\/addons\/ofxParticleEmitter",
+    "7006982D5E173F825F214D67E217C9FFDD1211DE" : "ofParticleDesigner\/",
+    "ADACB6BAEA67271B9A2BF47167EA909FD6B0CF40" : "..\/..\/addons\/ofxSimpleGuiToo"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ofParticleDesigner",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ofParticleDesigner.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/llahiru\/ofParticleDesigner.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7006982D5E173F825F214D67E217C9FFDD1211DE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sroske\/ofxParticleEmitter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "72D25900503C1EDEC22C56B3CBC898443AB798C3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/memo\/ofxSimpleGuiToo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ADACB6BAEA67271B9A2BF47167EA909FD6B0CF40"
+    }
+  ]
+}

@@ -26,7 +26,7 @@
 #include "ofxXmlSettings.h"
 #include "ofxParticleEmitter.h"
 
-class testApp : public ofBaseApp{
+class ofApp : public ofBaseApp{
 
 public:
     void setup();
@@ -54,8 +54,8 @@ private:
 	GLfloat			radialAccelVariance, tangentialAccelVariance;
 	Vector2f		gravity;	
 	GLfloat			particleLifespan, particleLifespanVariance;			
-	Color4f			startColor, startColorVariance;						
-	Color4f			finishColor, finishColorVariance;
+	ofFloatColor			startColor, startColorVariance;						
+	ofFloatColor			finishColor, finishColorVariance;
 	GLfloat			startParticleSize, startParticleSizeVariance;
 	GLfloat			finishParticleSize, finishParticleSizeVariance;
 	GLint			maxParticles;

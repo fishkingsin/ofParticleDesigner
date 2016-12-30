@@ -20,12 +20,12 @@
 // THE SOFTWARE.
 //
 
-#include "testApp.h"
+#include "ofApp.h"
 
 #include "ofxSimpleGuiToo.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){
+void ofApp::setup(){
 
     ofBackground(0, 0, 0);
 	ofSetVerticalSync(true);
@@ -111,10 +111,11 @@ void testApp::setup(){
     //----------- COLOR ------------------
     gui.addPage("Color");
     gui.addTitle("Color");
-	gui.addColorPicker("Start Color", &(m_emitter.startColor).red);
-    gui.addColorPicker("Start Color Var", &(m_emitter.startColorVariance).red);
-    gui.addColorPicker("End Color", &(m_emitter.finishColor).red);
-    gui.addColorPicker("End Color Var", &(m_emitter.finishColorVariance).red);
+    
+	gui.addColorPicker("Start Color", m_emitter.startColor);
+    gui.addColorPicker("Start Color Var", m_emitter.startColorVariance);
+    gui.addColorPicker("End Color", m_emitter.finishColor);
+    gui.addColorPicker("End Color Var", m_emitter.finishColorVariance);
     
     gui.addTitle("Blend Mode");
     string glTitleArray[] = {"GL_ZERO", "GL_ONE", "GL_DST_COLOR", "GL_ONE_MINUS_DST_COLOR", "GL_SRC_ALPHA", "GL_ONE_MINUS_SRC_ALPHA", "GL_DST_ALPHA",
@@ -159,7 +160,7 @@ void testApp::setup(){
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void ofApp::update(){
     
     m_emitter.update();
     
@@ -253,7 +254,7 @@ void testApp::update(){
    // ofSetWindowTitle(ofToString(m_emitter.blendFuncSource));
 }
 
-void testApp::setBlendType(int s, int &val) {
+void ofApp::setBlendType(int s, int &val) {
     
     //GL BLEND TYPE
     switch (s) {
@@ -300,7 +301,7 @@ void testApp::setBlendType(int s, int &val) {
     }
 }
 
-int testApp::getBlendType(int s) {
+int ofApp::getBlendType(int s) {
     
     int val;
     val = 0;
@@ -353,7 +354,7 @@ int testApp::getBlendType(int s) {
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void ofApp::draw(){
 
     gui.draw();
     
@@ -361,7 +362,7 @@ void testApp::draw(){
 }
 
 //--------------------------------------------------------------
-void testApp::keyPressed(int key){
+void ofApp::keyPressed(int key){
     
     if(key>='0' && key<='9') {
 		gui.setPage(key - '0');
@@ -377,50 +378,50 @@ void testApp::keyPressed(int key){
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){
+void ofApp::keyReleased(int key){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y ){
 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button){
 
     /*m_emitter.sourcePosition.x = x;
 	m_emitter.sourcePosition.y = y;*/
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button){
 
     /*m_emitter.sourcePosition.x = x;
 	m_emitter.sourcePosition.y = y;*/
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button){
 
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h){
 
 }
 
 //--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg){
 
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
 
-void testApp::saveToParticleXML() {
+void ofApp::saveToParticleXML() {
     
     string xmlFilename = "particle_settings.pex";
 	
@@ -505,34 +506,34 @@ void testApp::saveToParticleXML() {
     XML.popTag();
     
     XML.addTag("startColor");
-    XML.addAttribute("startColor", "red", m_emitter.startColor.red, 0);
-    XML.addAttribute("startColor", "green", m_emitter.startColor.green, 0);
-    XML.addAttribute("startColor", "blue", m_emitter.startColor.blue, 0);
-    XML.addAttribute("startColor", "alpha", m_emitter.startColor.alpha, 0);
+    XML.addAttribute("startColor", "red", m_emitter.startColor.r, 0);
+    XML.addAttribute("startColor", "green", m_emitter.startColor.g, 0);
+    XML.addAttribute("startColor", "blue", m_emitter.startColor.b, 0);
+    XML.addAttribute("startColor", "alpha", m_emitter.startColor.a, 0);
     XML.pushTag("startColor");
     XML.popTag();
     
     XML.addTag("startColorVariance");
-    XML.addAttribute("startColorVariance", "red", m_emitter.startColorVariance.red, 0);
-    XML.addAttribute("startColorVariance", "green", m_emitter.startColorVariance.green, 0);
-    XML.addAttribute("startColorVariance", "blue", m_emitter.startColorVariance.blue, 0);
-    XML.addAttribute("startColorVariance", "alpha", m_emitter.startColorVariance.alpha, 0);
+    XML.addAttribute("startColorVariance", "red", m_emitter.startColorVariance.r, 0);
+    XML.addAttribute("startColorVariance", "green", m_emitter.startColorVariance.g, 0);
+    XML.addAttribute("startColorVariance", "blue", m_emitter.startColorVariance.b, 0);
+    XML.addAttribute("startColorVariance", "alpha", m_emitter.startColorVariance.a, 0);
     XML.pushTag("startColorVariance");
     XML.popTag();
     
     XML.addTag("finishColor");
-    XML.addAttribute("finishColor", "red", m_emitter.finishColor.red, 0);
-    XML.addAttribute("finishColor", "green", m_emitter.finishColor.green, 0);
-    XML.addAttribute("finishColor", "blue", m_emitter.finishColor.blue, 0);
-    XML.addAttribute("finishColor", "alpha", m_emitter.finishColor.alpha, 0);
+    XML.addAttribute("finishColor", "red", m_emitter.finishColor.r, 0);
+    XML.addAttribute("finishColor", "green", m_emitter.finishColor.g, 0);
+    XML.addAttribute("finishColor", "blue", m_emitter.finishColor.b, 0);
+    XML.addAttribute("finishColor", "alpha", m_emitter.finishColor.a, 0);
     XML.pushTag("finishColor");
     XML.popTag();
     
     XML.addTag("finishColorVariance");
-    XML.addAttribute("finishColorVariance", "red", m_emitter.finishColorVariance.red, 0);
-    XML.addAttribute("finishColorVariance", "green", m_emitter.finishColorVariance.green, 0);
-    XML.addAttribute("finishColorVariance", "blue", m_emitter.finishColorVariance.blue, 0);
-    XML.addAttribute("finishColorVariance", "alpha", m_emitter.finishColorVariance.alpha, 0);
+    XML.addAttribute("finishColorVariance", "red", m_emitter.finishColorVariance.r, 0);
+    XML.addAttribute("finishColorVariance", "green", m_emitter.finishColorVariance.g, 0);
+    XML.addAttribute("finishColorVariance", "blue", m_emitter.finishColorVariance.b, 0);
+    XML.addAttribute("finishColorVariance", "alpha", m_emitter.finishColorVariance.a, 0);
     XML.pushTag("finishColorVariance");
     XML.popTag();
     
@@ -613,11 +614,11 @@ void testApp::saveToParticleXML() {
 	//ofLog(OF_LOG_VERBOSE, "ofxSimpleGuiPage::saveToXML: " + xmlFilename + " " + ofToString(controls.size(), 0) + " items");
 }
 
-void testApp::loadFromParticleXML(string xmlname) {
+void ofApp::loadFromParticleXML(string xmlname) {
     
     if ( !m_emitter.loadFromXml( xmlname ) )
 	{
-		ofLog( OF_LOG_ERROR, "testApp::setup() - failed to load emitter config" );
+		ofLog( OF_LOG_ERROR, "ofApp::setup() - failed to load emitter config" );
 	}
     
     m_emitter.sourcePosition.x = ofGetWidth()/2;
